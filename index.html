@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Padaria Congelados</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padaria Congelados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="font-sans text-gray-800 bg-white">
 
-  <!-- HERO WITH PARALLAX -->
-  <section
-    class="h-screen flex items-center justify-center parallax relative"
-    style="background-image: url('assets/image2.png');"
-  >
-    <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center text-white z-10">
-      <h1 class="text-4xl md:text-6xl font-bold">Pães Congelados com Sabor de Padaria</h1>
-      <p class="mt-4 text-xl">Qualidade, praticidade e aquele cheirinho irresistível.</p>
-    </div>
-    <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-  </section>
+    <!-- HERO WITH PARALLAX -->
+    <section id="hero" class="h-screen flex items-center justify-center parallax relative">
+        <div class="bg-black bg-opacity-50 p-10 rounded-xl text-center text-white z-10">
+            <h1 class="text-4xl md:text-6xl font-bold">Pães Congelados com Sabor de Padaria</h1>
+            <p class="mt-4 text-xl">Qualidade, praticidade e aquele cheirinho irresistível.</p>
+        </div>
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+    </section>
 
-  <!-- PRODUCT CAROUSEL -->
-  <section class="py-12 bg-gray-100">
-    <h2 class="text-3xl font-bold text-center mb-6">Nossos Produtos</h2>
-    <div class="overflow-hidden relative max-w-6xl mx-auto">
-      <div id="carousel" class="flex transition-transform duration-700">
-        <img src="assets/image1.png" class="min-w-full object-cover" />
-        <img src="assets/image2.png" class="min-w-full object-cover" />
-        <img src="assets/image3.png" class="min-w-full object-cover" />
-      </div>
-      <div class="flex justify-center mt-4 gap-2">
-        <button onclick="prevSlide()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">&#x25C0;</button>
-        <button onclick="nextSlide()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">&#x25B6;</button>
-      </div>
-    </div>
-  </section>
 
-  <!-- SOBRE -->
-  <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Quem Somos</h2>
-      <p class="text-lg">
-        Somos uma empresa especializada em pães congelados com qualidade de padaria artesanal. Nossos produtos são ideais para supermercados, cafeterias, e para você que quer praticidade sem abrir mão do sabor.
-      </p>
-    </div>
-  </section>
+    <!-- PRODUCT CAROUSEL -->
+    <section class="py-12 bg-gray-100">
+        <h2 class="text-3xl font-bold text-center mb-6">Nossos Produtos</h2>
+        <div class="overflow-hidden relative max-w-6xl mx-auto">
+            <div id="carousel" class="flex transition-transform duration-700 ease-in-out">
+                <!-- Cards serão injetados por JS -->
+            </div>
+            <div class="flex justify-center mt-4 gap-2">
+                <button onclick="prevSlide()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">&#x25C0;</button>
+                <button onclick="nextSlide()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">&#x25B6;</button>
+            </div>
+        </div>
+    </section>
 
-  <!-- CALL TO ACTION -->
-  <section class="py-16 bg-yellow-500 text-center text-white">
-    <h2 class="text-3xl font-bold mb-4">Leve nossos pães para seu negócio</h2>
-    <p class="text-lg mb-6">Solicite um orçamento ou amostra grátis agora mesmo!</p>
-    <a href="#contato" class="bg-white text-yellow-600 font-semibold px-6 py-3 rounded hover:bg-yellow-100 transition">Entrar em Contato</a>
-  </section>
+    <!-- SOBRE -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Quem Somos</h2>
+            <p class="text-lg">
+                Somos uma empresa especializada em pães congelados com qualidade de padaria artesanal. Nossos produtos
+                são ideais para supermercados, cafeterias, e para você que quer praticidade sem abrir mão do sabor.
+            </p>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- CALL TO ACTION -->
+    <section class="py-16 bg-yellow-500 text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">Leve nossos pães para seu negócio</h2>
+        <p class="text-lg mb-6">Solicite um orçamento ou amostra grátis agora mesmo!</p>
+        <a href="#contato"
+            class="bg-white text-yellow-600 font-semibold px-6 py-3 rounded hover:bg-yellow-100 transition">Entrar em
+            Contato</a>
+    </section>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
