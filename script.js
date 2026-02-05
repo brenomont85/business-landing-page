@@ -5,13 +5,6 @@ const backgroundImages = [
   "assets/image2.png",
   "assets/image3.png",
 ];
-const heroSection = document.getElementById("hero");
-
-function switchHeroBackground() {
-  heroIndex = (heroIndex + 1) % backgroundImages.length;
-  heroSection.style.backgroundImage = `url('${backgroundImages[heroIndex]}')`;
-}
-setInterval(switchHeroBackground, 5000);
 
 // ----------- CARD CAROUSEL -----------
 const products = [
@@ -25,12 +18,19 @@ const products = [
   { name: "Brioche de Côco", image: "assets/products/image8.webp" },
 ];
 
-const carousel = document.getElementById("carousel");
 const cardsPerPage = 4;
 let currentIndex = 0;
+let heroSection;
+let carousel;
+
+function switchHeroBackground() {
+  heroIndex = (heroIndex + 1) % backgroundImages.length;
+  heroSection.style.backgroundImage = `url('${backgroundImages[heroIndex]}')`;
+}
 
 function createCards() {
   const duplicatedProducts = [...products, ...products];
+
   duplicatedProducts.forEach((product) => {
     const card = document.createElement("div");
     card.className = "w-full sm:w-1/2 md:w-1/4 flex-shrink-0 p-2";
@@ -40,7 +40,7 @@ function createCards() {
         <div class="p-4">
           <h3 class="text-xl font-semibold mb-2">${product.name}</h3>
           <button class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
-            View Details
+            Detalhes
           </button>
         </div>
       </div>
@@ -58,8 +58,8 @@ function moveCarouselManually(newIndex) {
     setTimeout(() => {
       carousel.style.transition = "none";
       currentIndex = 0;
-      carousel.style.transform = `translateX(0px)`;
-      void carousel.offsetWidth; // force reflow
+      carousel.style.transform = "translateX(0px)";
+      void carousel.offsetWidth;
       carousel.style.transition = "transform 0.7s ease-in-out";
     }, 700);
   }
@@ -75,6 +75,19 @@ function prevSlide() {
   moveCarouselManually(currentIndex);
 }
 
+// ----------- INIT -----------
 document.addEventListener("DOMContentLoaded", () => {
-  createCards();
+  heroSection = document.getElementById("hero");
+  carousel = document.getElementById("carousel");
+
+  if (heroSection) {
+    setInterval(switchHeroBackground, 5000);
+  }
+
+  if (carousel) {
+    createCards();
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
 });
+// End of file: script.js
